@@ -1,5 +1,5 @@
 # Anthorflix
-O teste do desenvolvedor Anthor
+O teste de dev da Anthor
 
 # Sobre
 Obrigado pelo seu interesse em participar do nosso processo seletivo. No seu email você deve ter recebido qual trilha deve executar para seu teste: o de backend ou mobile (não é necessário fazer os dois, apenas o da sua trilha).
