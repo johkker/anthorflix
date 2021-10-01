@@ -45,7 +45,8 @@ Sua API deve estar dividida nos domínios significativos para o funcionamento do
 - Cadastro de usuários
 - Usuários podem marcar filmes que já assistiram e avaliá-los
     - Fique a vontade para escolher o sistema de avaliação que quiser (estrelas, joinha, emojis, etc)
-- A avaliação média do filme deve ser feita de forma assíncrona
+- A avaliação de um filme é calculada pela média de avaliações dos usuários
+    - O cálculo da avaliação de um filme deve ser feito de forma assíncrona
 - Usuários podem comentar em avaliações de outros usuários
 - Comunicação com algum banco de dados (MongoDB, Postgres, Cassandra, etc)
 - Testes (unitário ou integração)
