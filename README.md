@@ -67,10 +67,10 @@ Você será avaliado por:
 
 # Entrega
 
-Você deve enviar seu projeto em um repositório público e responder as seguintes informações no README:
+Você deve enviar o link do seu projeto em um repositório público por email e responder as seguintes informações no README do projeto:
 
 1. Como rodar o seu projeto
 1. Bugs conhecidos
-1. Como você planejou abordar este projeto? Que tecnologis foram utilizadas?
+1. Como você planejou abordar este projeto? Que tecnologias foram utilizadas?
 1. Você acha algum dos requisitos ou features difícil em algum aspecto? Por quê?
 1. Se você tivesse mais tempo para fazer o projeto o que faria de diferente?
