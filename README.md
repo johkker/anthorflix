@@ -36,34 +36,35 @@ Você será avaliado por:
 
 ## Teste Backend
 
-Você deve construir uma API (preferencialmente usando NodeJS) para avaliação de filmes.
+Você deve construir uma API Restful (preferencialmente usando NodeJS) para avaliação de filmes.
 
 **Requisitos:**
 
 Sua API deve estar dividida nos domínios significativos para o funcionamento do sistema e deve ter as seguintes funcionalidades:
 - CRUD de filmes
 - Cadastro de usuários
-- Usuários podem marcar filmes que já assistiram e avaliá-los
+- Usuários podem marcar filmes que já assistiram
+- Usuários podem avaliar filmes
     - Fique a vontade para escolher o sistema de avaliação que quiser (estrelas, joinha, emojis, etc)
-- A avaliação de um filme é calculada pela média de avaliações dos usuários
-    - O cálculo da avaliação de um filme deve ser feito de forma assíncrona
-- Usuários podem comentar em avaliações de outros usuários
-- Comunicação com algum banco de dados (MongoDB, Postgres, Cassandra, etc)
-- Testes (unitário ou integração)
+    - A avaliação de um filme é calculada pela média de avaliações dos usuários. O cálculo da avaliação de um filme deve ser feito de forma assíncrona
+- Usuários podem comentar nas avaliações de outros usuários
+- Sua API deve se comunicar com algum banco de dados (MongoDB, Postgres, Cassandra, etc)
+- Testes unitários (mire em 70% de cobertura)
 
 **Opcionais:**
-
-- Integração com a API do OMDB
-- Autenticação de usuários
-- GraphQL
+- Use docker-compose
+- Teste de integração
+- Integração com a API do OMDB ou TheMovieDB
 - Typescript
-- Docker
+- GraphQL
+- Autenticação de usuários
 
-Você será avaliado por: 
-- Estrutura do seu projeto
-- Qualidade do código e padrões utilizados (Solid, Dry, etc)
-- Testes escritos
-- Modelagem dos domínios
+**Você será avaliado por: **
+1. Qualidade das features entregues. Dê preferência por entregar poucas funcionalidades, desde que sejam entregues com qualidade
+1. Facilidade para rodar o código. Dê preferência para soluções como o `docker-compose` ou outras abstrações que coloquem tudo no ar
+1. Testes escritos
+1. Modelagem dos domínios e estrutura do seu projeto
+1. Qualidade do código e padrões utilizados (Solid, Dry, etc)
 
 # Entrega
 
@@ -72,5 +73,5 @@ Você deve enviar o link do seu projeto em um repositório público por email e 
 1. Como rodar o seu projeto
 1. Bugs conhecidos
 1. Como você planejou abordar este projeto? Que tecnologias foram utilizadas?
-1. Você acha algum dos requisitos ou features difícil em algum aspecto? Por quê?
+1. Você acha algum dos requisitos ou funcionalidades difíceis em algum aspecto? Por quê?
 1. Se você tivesse mais tempo para fazer o projeto o que faria de diferente?
