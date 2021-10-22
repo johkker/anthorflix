@@ -59,7 +59,7 @@ Sua API deve estar dividida nos domínios significativos para o funcionamento do
 - GraphQL
 - Autenticação de usuários
 
-**Você será avaliado por: **
+**Você será avaliado por:**
 1. Qualidade das features entregues. Dê preferência por entregar poucas funcionalidades, desde que sejam entregues com qualidade
 1. Facilidade para rodar o código. Dê preferência para soluções como o `docker-compose` ou outras abstrações que coloquem tudo no ar
 1. Testes escritos
