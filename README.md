@@ -6,8 +6,8 @@ Obrigado pelo seu interesse em participar do nosso processo seletivo. No seu ema
 
 O Anthorflix(:tm:) é uma aplicação revolucionária para compartilhar com seus amigos os filmes que você viu e suas avaliações. Você pode cadastrar os filmes que assistiu, avaliá-los e comentar as avaliações de seus amigos. Abaixo estão as instruções para cada trilha:
 
-## Teste Mobile
-Você deve construir uma aplicação móvel utilizando Flutter para compartilhar suas opiniões sobre filme. Seu aplicativo deve ter as seguintes funcionalidades:
+## Teste Mobile (Flutter)
+Você deve construir uma aplicação móvel utilizando Flutter para compartilhar suas opiniões sobre filmes. Seu aplicativo deve ter as seguintes funcionalidades:
 
 **Requisitos:**
 
@@ -22,19 +22,51 @@ Você deve construir uma aplicação móvel utilizando Flutter para compartilhar
 
 - Seria legal se sua aplicação também fizesse o cadastro e login de usuários
 - Teste de integração
-- Integração com a API do OMDB
+- Integração com a API do OMDB ou TheMovieDB
 - Backend em qualquer linguagem
 
 Você não precisa usar um backend, mas seu aplicativo deve se comportar como se existisse um. Se optar por não usar um backend, seu aplicativo deve persistir os dados locais.
 
-Você será avaliado por:
+**Você será avaliado por:**
+- Qualidade das features entregues. Se não conseguir fazer tudo, dê preferência por entregar poucas funcionalidades, desde que sejam entregues com qualidade
 - Estrutura do seu projeto
 - Qualidade do código e padrões utilizados (Solid, Dry, etc)
 - Testes escritos
 
 ---
 
-## Teste Backend
+## Teste Frontend/Fullstack (NodeJs, React)
+Você deve construir uma aplicação web utilizando React para compartilhar suas opiniões sobre filmes. Seu aplicativo deve ter as seguintes funcionalidades:
+
+**Requisitos:**
+
+- Criar, editar e remover filmes (o famoso CRUD)
+- Listar os detalhes de um filme: diretor, elenco, ano, gênero, etc
+- Avaliar filmes: fique a vontade para escolher o sistema de avaliação que quiser (estrelas, joinha, emojis, etc)
+- Comentar na avaliação de filmes: o que seria a internet sem comentários de pessoas aleatórias?
+- Teste unitário
+
+**Opcionais:**
+
+- Seria legal se sua aplicação também fizesse o cadastro e login de usuários
+- Teste de integração
+- Integração com a API do OMDB ou TheMovieDB
+
+**Backend:**
+
+Se você se candidatou para uma vaga de frontend **não precisa usar um backend**, mas seu aplicativo **deve** se comportar como se existisse um. Se optar por não usar um backend, seu aplicativo deve persistir os dados locais.
+
+Para candidatos fullstack, **você deve fazer um backend** que atenda as necessidades do frontend. De forma opcional, você pode seguir a especificação para o teste de backend.
+
+**Você será avaliado por:**
+- Qualidade das features entregues. Se não conseguir fazer tudo, dê preferência por entregar poucas funcionalidades, desde que sejam entregues com qualidade
+- Estrutura do seu projeto
+- Qualidade do código e padrões utilizados (Solid, Dry, etc)
+- Testes escritos
+
+---
+
+## Teste Backend (NodeJS)
 
 Você deve construir uma API Restful (preferencialmente usando NodeJS) para avaliação de filmes.
 
