@@ -14,6 +14,12 @@ import createGenreCTRL from "./createGenre.controller";
 import deleteGenreCTRL from "./deleteGenre.controller";
 import getGenresCTRL from "./getGenres.controller";
 
+import rateCTRL from "./rate.controller";
+
+import addCommentCTRL from "./addComment.controller";
+import editCommentCTRL from "./editComment.controller";
+import deleteCommentCTRL from "./deleteComment.controller";
+
 export {
   userLoginCTRL,
   createUserCTRL,
@@ -28,4 +34,8 @@ export {
   getUsersCTRL,
   getUserByIDCTRL,
   deleteUserCTRL,
+  rateCTRL,
+  addCommentCTRL,
+  editCommentCTRL,
+  deleteCommentCTRL,
 };

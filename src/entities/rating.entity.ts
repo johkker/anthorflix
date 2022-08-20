@@ -5,6 +5,9 @@ import {
   PrimaryGeneratedColumn,
   ManyToOne,
   ManyToMany,
+  JoinTable,
+  JoinColumn,
+  OneToOne,
 } from "typeorm";
 import { User } from ".";
 import { Movie } from ".";
@@ -14,15 +17,16 @@ export class Rating {
   @PrimaryGeneratedColumn("uuid")
   readonly id: string;
 
-  @Column({ name: "likes", type: "int" })
+  @Column({ name: "likes", type: "int", default: 0 })
   likes: number;
 
-  @Column({ name: "dislikes", type: "int" })
+  @Column({ name: "dislikes", type: "int", default: 0 })
   dislikes: number;
 
   @ManyToMany(() => User, (user) => user.ratings)
+  @JoinTable({ name: "users" })
   users: User[];
 
-  @ManyToOne(() => Movie, (movie) => movie.ratings)
+  @OneToOne(() => Movie, (movie) => movie.rating)
   movie: Movie;
 }

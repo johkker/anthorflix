@@ -7,6 +7,8 @@ import {
   ManyToMany,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinTable,
+  JoinColumn,
 } from "typeorm";
 
 import { Comment, Rating } from ".";

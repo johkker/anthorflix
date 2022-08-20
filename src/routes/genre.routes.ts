@@ -11,7 +11,7 @@ const genreRoutes = Router();
 
 genreRoutes.get("/genres", validateAuth, getGenresCTRL);
 genreRoutes.post(
-  "/genres",
+  "/genres/register",
   validateForms(genreCreateSchema),
   validateAdm,
   createGenreCTRL

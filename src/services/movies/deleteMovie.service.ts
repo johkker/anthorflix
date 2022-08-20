@@ -12,11 +12,10 @@ const deleteMovieSVC = async (id: string, adm: boolean) => {
 
   if (!adm) throw new AppError("Not Authorized", 401);
 
-  movieRepository.remove(movie);
-  await movieRepository.save(movie);
+  await movieRepository.delete(movie.id);
 
   return {
-    message: `The movie ${movie.id} was succesfully deleted.`,
+    message: `The movie was succesfully deleted.`,
   };
 };
 

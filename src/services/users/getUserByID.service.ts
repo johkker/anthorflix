@@ -9,12 +9,14 @@ const getUserByIDSVC = async (id: string, self: User, adm: boolean) => {
     throw new AppError("User not found", 404);
   }
 
+  const { password, ...treatedUser } = user;
+
   if (user.id === self.id) {
-    return user;
+    return treatedUser;
   }
 
   if (adm) {
-    return user;
+    return treatedUser;
   }
 
   throw new AppError("Not Authorized", 401);

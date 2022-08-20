@@ -7,6 +7,8 @@ import createMovieSchema from "./movies/addMovie.schema";
 
 import genreCreateSchema from "./genres/addGenre.schema";
 
+import commentSchema from "./movies/comment.schema";
+
 export {
   createUserSchema,
   userLoginSchema,
@@ -14,4 +16,5 @@ export {
   createMovieSchema,
   genreCreateSchema,
   updateMovieSchema,
+  commentSchema,
 };
