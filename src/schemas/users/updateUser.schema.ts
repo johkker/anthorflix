@@ -7,10 +7,7 @@ const updateUserSchema = yup.object().shape({
     .string()
     .email()
     .transform((value, originalValue) => originalValue.toLowerCase()),
-  password: yup
-    .string()
-    .min(8, "Password must be at least 8 characters")
-    .transform((value, originalValue) => bcrypt.hashSync(originalValue, 10)),
+  password: yup.string().min(8, "Password must be at least 8 characters"),
   isAdm: yup.boolean(),
 });
 

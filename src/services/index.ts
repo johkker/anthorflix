@@ -13,6 +13,13 @@ import getMovieByIDSVC from "./movies/getMovieByID.service";
 
 import createGenreSVC from "./genres/createGenre.service";
 import deleteGenreSVC from "./genres/deleteGenre.service";
+import getGenresSVC from "./genres/getGenres.service";
+
+import rateSVC from "./ratings/rate.service";
+
+import addCommentSVC from "./comments/addComment.service";
+import deleteCommentSVC from "./comments/deleteComment.service";
+import editCommentSVC from "./comments/editComment.service";
 
 export {
   createUserSVC,
@@ -26,6 +33,11 @@ export {
   getUserByIDSVC,
   getUsersSVC,
   deleteGenreSVC,
+  getGenresSVC,
   deleteUserSVC,
   updateUserSVC,
+  rateSVC,
+  addCommentSVC,
+  deleteCommentSVC,
+  editCommentSVC,
 };

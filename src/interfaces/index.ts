@@ -14,7 +14,7 @@ export interface IUserUpdate {
   email?: string;
   password?: string;
   name?: string;
-  isAdm?: boolean;
+  isAdm: boolean;
 }
 
 export interface IMovieCreate {
@@ -30,7 +30,7 @@ export interface IMovieUpdate {
   overview?: string;
   releaseDate?: string;
   runtime?: number;
-  genres?: Genre[];
+  genres?: string[];
 }
 
 export interface ICommentCreate {

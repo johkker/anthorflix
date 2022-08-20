@@ -7,6 +7,9 @@ import {
   ManyToMany,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinTable,
+  JoinColumn,
+  OneToOne,
 } from "typeorm";
 import { Comment, Rating, Genre } from ".";
 
@@ -19,20 +22,29 @@ export class Movie {
   @Column({ name: "title", type: "varchar" })
   title: string;
 
-  @Column({ name: "imdb_id", type: "varchar" })
+  @Column({ name: "overview", type: "varchar" })
   overview: string;
 
   @Column({ name: "release_date", type: "date" })
   releaseDate: string;
 
+  @Column({
+    name: "image_url",
+    type: "varchar",
+    default: "https://source.unsplash.com/random",
+  })
+  imageUrl: string;
+
   @Column({ name: "runtime", type: "int" })
   runtime: number;
 
   @ManyToMany(() => Genre, (genre) => genre.movies)
+  @JoinTable({ name: "genres" })
   genres: Genre[];
 
-  @OneToMany(() => Rating, (rating) => rating.movie)
-  ratings: Rating[];
+  @OneToOne(() => Rating, (rating) => rating.movie)
+  @JoinColumn({ name: "rating" })
+  rating: Rating;
 
   @OneToMany(() => Comment, (comment) => comment.movie)
   comments: Comment[];

@@ -6,6 +6,9 @@ import {
   ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinColumn,
+  OneToOne,
+  ManyToMany,
 } from "typeorm";
 import { Movie, User } from ".";
 
@@ -24,6 +27,7 @@ export class Comment {
   updatedAt: Date;
 
   @ManyToOne(() => Movie, (movie) => movie.comments)
+  @JoinColumn({ name: "movie" })
   movie: Movie;
 
   @ManyToOne(() => User, (user) => user.comments)

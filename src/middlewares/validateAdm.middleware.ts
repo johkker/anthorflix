@@ -8,12 +8,6 @@ import { userRepository } from "../repositories";
 config();
 
 const validateAdm = async (req: Request, res: Response, next: NextFunction) => {
-  const isAdm = req.newInput.isAdm;
-
-  if (!isAdm) {
-    return next();
-  }
-
   const authorization = req.headers.authorization;
   if (!authorization) {
     throw new AppError("Missing Authorization Token", 401);

@@ -5,16 +5,24 @@ import {
   deleteMovieCTRL,
   getMovieByIDCTRL,
   getMoviesCTRL,
+  rateCTRL,
+  addCommentCTRL,
+  editCommentCTRL,
+  deleteCommentCTRL,
 } from "../controllers";
 import { validateAdm, validateAuth, validateForms } from "../middlewares";
-import { createMovieSchema, updateMovieSchema } from "../schemas";
+import {
+  commentSchema,
+  createMovieSchema,
+  updateMovieSchema,
+} from "../schemas";
 
 const movieRoutes = Router();
 
 movieRoutes.get("/movies", validateAuth, getMoviesCTRL);
 movieRoutes.get("/movies/:id", validateAuth, getMovieByIDCTRL);
 movieRoutes.post(
-  "/movies",
+  "/movies/register",
   validateForms(createMovieSchema),
   validateAdm,
   createMovieCTRL
@@ -26,5 +34,25 @@ movieRoutes.patch(
   updateMovieCTRL
 );
 movieRoutes.delete("/movies/:id", validateAdm, deleteMovieCTRL);
+
+movieRoutes.patch("/movies/rate/:type/:id", validateAuth, rateCTRL);
+
+movieRoutes.patch(
+  "/movies/:id/comment",
+  validateForms(commentSchema),
+  validateAuth,
+  addCommentCTRL
+);
+movieRoutes.patch(
+  "/movies/comment/:commentId",
+  validateForms(commentSchema),
+  validateAuth,
+  editCommentCTRL
+);
+movieRoutes.delete(
+  "/movies/comment/:commentId",
+  validateAdm,
+  deleteCommentCTRL
+);
 
 export default movieRoutes;

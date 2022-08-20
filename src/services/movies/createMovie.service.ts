@@ -1,5 +1,5 @@
-import { Movie } from "../../entities";
-import { movieRepository } from "../../repositories";
+import { Movie, Rating } from "../../entities";
+import { movieRepository, ratingRepository } from "../../repositories";
 import { IMovieCreate } from "../../interfaces";
 import { AppError } from "../../errors";
 
@@ -16,26 +16,23 @@ const createMovieSVC = async (data: IMovieCreate, adm: boolean) => {
 
   if (!adm) throw new AppError("Not Authorized", 401);
 
+  const rating = new Rating();
+  ratingRepository.create(rating);
+  await ratingRepository.save(rating);
+
   const movie = new Movie();
   movie.title = title;
   movie.overview = overview;
   movie.releaseDate = releaseDate;
   movie.runtime = runtime;
   movie.genres ? data.genres : [];
+  movie.rating = rating;
 
   movieRepository.create(movie);
   await movieRepository.save(movie);
 
   return {
-    id: movie.id,
-    title: movie.title,
-    overview: movie.overview,
-    releaseDate: movie.releaseDate,
-    runtime: movie.runtime,
-    genres: movie.genres,
-    ratings: movie.ratings,
-    comments: movie.comments,
-    createdAt: movie.createdAt,
+    movie,
   };
 };
 
