@@ -3,7 +3,7 @@ import { movieRepository } from "../../repositories";
 import { IMovieUpdate } from "../../interfaces";
 import { AppError } from "../../errors";
 
-const createMovieSVC = async (data: IMovieUpdate, id: string) => {
+const createMovieSVC = async (data: IMovieUpdate, id: string, adm: boolean) => {
   const { title, overview, releaseDate, runtime } = data;
 
   const movie = await movieRepository.findOne({
@@ -13,6 +13,7 @@ const createMovieSVC = async (data: IMovieUpdate, id: string) => {
   if (!movie) {
     throw new AppError("Movie not found", 400);
   }
+  if (!adm) throw new AppError("Not Authorized", 401);
 
   title ? (movie.title = title) : movie.title;
   overview ? (movie.overview = overview) : movie.overview;

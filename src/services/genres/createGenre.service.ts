@@ -3,7 +3,9 @@ import { genreRepository } from "../../repositories";
 import { IGenreRegister } from "../../interfaces";
 import { AppError } from "../../errors";
 
-const createGenreSVC = async (data: IGenreRegister) => {
+const createGenreSVC = async (data: IGenreRegister, adm: boolean) => {
+  if (!adm) throw new AppError("Not Authorized", 401);
+
   const { name } = data;
 
   const existingGenre = await genreRepository.findOne({

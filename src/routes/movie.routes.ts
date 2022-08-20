@@ -1,24 +1,30 @@
 import { Router } from "express";
-import { createMovieCTRL, updateMovieCTRL } from "../controllers";
-import { validateAdm, validateForms } from "../middlewares";
+import {
+  createMovieCTRL,
+  updateMovieCTRL,
+  deleteMovieCTRL,
+  getMovieByIDCTRL,
+  getMoviesCTRL,
+} from "../controllers";
+import { validateAdm, validateAuth, validateForms } from "../middlewares";
 import { createMovieSchema, updateMovieSchema } from "../schemas";
 
 const movieRoutes = Router();
 
-movieRoutes.get("/movies");
-movieRoutes.get("/movies/:id");
+movieRoutes.get("/movies", validateAuth, getMoviesCTRL);
+movieRoutes.get("/movies/:id", validateAuth, getMovieByIDCTRL);
 movieRoutes.post(
   "/movies",
   validateForms(createMovieSchema),
   validateAdm,
   createMovieCTRL
 );
-movieRoutes.put(
+movieRoutes.patch(
   "/movies/:id",
   validateForms(updateMovieSchema),
   validateAdm,
   updateMovieCTRL
 );
-movieRoutes.delete("/movies/:id");
+movieRoutes.delete("/movies/:id", validateAdm, deleteMovieCTRL);
 
 export default movieRoutes;

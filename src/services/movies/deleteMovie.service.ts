@@ -1,7 +1,7 @@
 import { AppError } from "../../errors";
 import { movieRepository } from "../../repositories";
 
-const deleteMovieSVC = async (id: string) => {
+const deleteMovieSVC = async (id: string, adm: boolean) => {
   const movie = await movieRepository.findOne({
     where: { id: id },
   });
@@ -9,6 +9,8 @@ const deleteMovieSVC = async (id: string) => {
   if (!movie) {
     throw new AppError("Movie not found", 404);
   }
+
+  if (!adm) throw new AppError("Not Authorized", 401);
 
   movieRepository.remove(movie);
   await movieRepository.save(movie);
