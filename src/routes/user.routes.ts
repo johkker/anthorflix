@@ -1,12 +1,23 @@
-import { NextFunction, Router } from "express";
-import { createUserCTRL, userLoginCTRL } from "../controllers";
+import { Router } from "express";
+import {
+  createUserCTRL,
+  deleteUserCTRL,
+  getUserByIDCTRL,
+  getUsersCTRL,
+  userLoginCTRL,
+} from "../controllers";
+import updateUserCTRL from "../controllers/updateUser.controller";
 import { validateAdm, validateAuth, validateForms } from "../middlewares";
-import { createUserSchema, userLoginSchema } from "../schemas";
+import {
+  createUserSchema,
+  updateUserSchema,
+  userLoginSchema,
+} from "../schemas";
 
 const userRoutes = Router();
 
-userRoutes.get("/users", validateAuth);
-userRoutes.get("/users/:id");
+userRoutes.get("/users", validateAdm, getUsersCTRL);
+userRoutes.get("/users/:id", validateAdm, getUserByIDCTRL);
 
 userRoutes.post(
   "/users/register",
@@ -16,7 +27,12 @@ userRoutes.post(
 );
 userRoutes.post("/users/login", validateForms(userLoginSchema), userLoginCTRL);
 
-userRoutes.put("/users/:id");
-userRoutes.delete("/users/:id");
+userRoutes.patch(
+  "/users/:id",
+  validateForms(updateUserSchema),
+  validateAdm,
+  updateUserCTRL
+);
+userRoutes.delete("/users/:id", validateAdm, deleteUserCTRL);
 
 export default userRoutes;

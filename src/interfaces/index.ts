@@ -10,6 +10,13 @@ export interface IUserRegister extends IUserLogin {
   isAdm: boolean;
 }
 
+export interface IUserUpdate {
+  email?: string;
+  password?: string;
+  name?: string;
+  isAdm?: boolean;
+}
+
 export interface IMovieCreate {
   title: string;
   overview: string;

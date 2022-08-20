@@ -3,7 +3,7 @@ import { movieRepository } from "../../repositories";
 import { IMovieCreate } from "../../interfaces";
 import { AppError } from "../../errors";
 
-const createMovieSVC = async (data: IMovieCreate) => {
+const createMovieSVC = async (data: IMovieCreate, adm: boolean) => {
   const { title, overview, releaseDate, runtime } = data;
 
   const existingMovie = await movieRepository.findOne({
@@ -13,6 +13,8 @@ const createMovieSVC = async (data: IMovieCreate) => {
   if (existingMovie) {
     throw new AppError("Movie already registered", 400);
   }
+
+  if (!adm) throw new AppError("Not Authorized", 401);
 
   const movie = new Movie();
   movie.title = title;

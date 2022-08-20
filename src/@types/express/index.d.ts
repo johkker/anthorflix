@@ -11,6 +11,7 @@ declare global {
       user: User;
       movie: Movie;
       genre: Genre;
+      self: boolean;
     }
   }
 }
