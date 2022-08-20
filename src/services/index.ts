@@ -3,6 +3,7 @@ import userLoginSVC from "./users/userLogin.service";
 import getUserByIDSVC from "./users/getUserByID.service";
 import getUsersSVC from "./users/getUsers.service";
 import deleteUserSVC from "./users/deleteUser.service";
+import updateUserSVC from "./users/updateUser.service";
 
 import createMovieSVC from "./movies/createMovie.service";
 import updateMovieSVC from "./movies/updateMovie.service";
@@ -26,4 +27,5 @@ export {
   getUsersSVC,
   deleteGenreSVC,
   deleteUserSVC,
+  updateUserSVC,
 };

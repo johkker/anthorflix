@@ -28,3 +28,5 @@ const updateUserSVC = async (
     message: "User successfully updated",
   };
 };
+
+export default updateUserSVC;

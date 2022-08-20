@@ -6,8 +6,13 @@ import {
   getUsersCTRL,
   userLoginCTRL,
 } from "../controllers";
+import updateUserCTRL from "../controllers/updateUser.controller";
 import { validateAdm, validateAuth, validateForms } from "../middlewares";
-import { createUserSchema, userLoginSchema } from "../schemas";
+import {
+  createUserSchema,
+  updateUserSchema,
+  userLoginSchema,
+} from "../schemas";
 
 const userRoutes = Router();
 
