@@ -20,14 +20,14 @@ const createUserSVC = async (data: IUserRegister, adm: boolean) => {
   user.password = password;
   user.isAdm = isAdm;
 
-  if (isAdm) {
-    if (adm) {
-      userRepository.create(user);
-      await userRepository.save(user);
-    } else {
-      throw new AppError("Missing admin privileges", 401);
-    }
-  }
+  // if (isAdm) {
+  //   if (adm) {
+  //     userRepository.create(user);
+  //     await userRepository.save(user);
+  //   } else {
+  //     throw new AppError("Missing admin privileges", 401);
+  //   }
+  // }
 
   userRepository.create(user);
   await userRepository.save(user);
