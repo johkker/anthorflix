@@ -3,7 +3,7 @@ import { userRepository } from "../../repositories";
 import { IUserRegister } from "../../interfaces";
 import { AppError } from "../../errors";
 
-const createUserSVC = async (data: IUserRegister, adm: boolean) => {
+const createUserSVC = async (data: IUserRegister) => {
   const { name, email, password, isAdm } = data;
 
   const existingUser = await userRepository.findOne({
@@ -11,7 +11,7 @@ const createUserSVC = async (data: IUserRegister, adm: boolean) => {
   });
 
   if (existingUser) {
-    throw new AppError("E-mail já cadastrado", 400);
+    throw new AppError("E-mail already registered", 400);
   }
 
   const user = new User();
@@ -21,12 +21,7 @@ const createUserSVC = async (data: IUserRegister, adm: boolean) => {
   user.isAdm = isAdm;
 
   if (isAdm) {
-    if (adm) {
-      userRepository.create(user);
-      await userRepository.save(user);
-    } else {
-      throw new AppError("Missing admin privileges", 401);
-    }
+    throw new AppError("You can not create an administrator account.", 401);
   }
 
   userRepository.create(user);

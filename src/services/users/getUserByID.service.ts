@@ -2,7 +2,7 @@ import { User } from "../../entities";
 import { AppError } from "../../errors";
 import { userRepository } from "../../repositories";
 
-const getUserByIDSVC = async (id: string, self: User, adm: boolean) => {
+const getUserByIDSVC = async (id: string) => {
   const user = await userRepository.findOne({ where: { id: id } });
 
   if (!user) {
@@ -11,15 +11,7 @@ const getUserByIDSVC = async (id: string, self: User, adm: boolean) => {
 
   const { password, ...treatedUser } = user;
 
-  if (user.id === self.id) {
-    return treatedUser;
-  }
-
-  if (adm) {
-    return treatedUser;
-  }
-
-  throw new AppError("Not Authorized", 401);
+  return treatedUser;
 };
 
 export default getUserByIDSVC;
