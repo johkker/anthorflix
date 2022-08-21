@@ -16,8 +16,8 @@ import {
 
 const userRoutes = Router();
 
-userRoutes.get("/users", validateAdm, getUsersCTRL);
-userRoutes.get("/users/:id", validateAdm, getUserByIDCTRL);
+userRoutes.get("/users", validateAuth, getUsersCTRL);
+userRoutes.get("/users/:id", validateAuth, getUserByIDCTRL);
 
 userRoutes.post(
   "/users/register",
