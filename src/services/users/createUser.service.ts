@@ -3,7 +3,7 @@ import { userRepository } from "../../repositories";
 import { IUserRegister } from "../../interfaces";
 import { AppError } from "../../errors";
 
-const createUserSVC = async (data: IUserRegister, adm: boolean) => {
+const createUserSVC = async (data: IUserRegister) => {
   const { name, email, password, isAdm } = data;
 
   const existingUser = await userRepository.findOne({
@@ -21,12 +21,7 @@ const createUserSVC = async (data: IUserRegister, adm: boolean) => {
   user.isAdm = isAdm;
 
   if (isAdm) {
-    if (adm) {
-      userRepository.create(user);
-      await userRepository.save(user);
-    } else {
-      throw new AppError("Missing admin privileges", 401);
-    }
+    throw new AppError("You can not create an account.", 401);
   }
 
   userRepository.create(user);

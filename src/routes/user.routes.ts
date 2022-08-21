@@ -22,7 +22,6 @@ userRoutes.get("/users/:id", validateAuth, getUserByIDCTRL);
 userRoutes.post(
   "/users/register",
   validateForms(createUserSchema),
-  validateAdm,
   createUserCTRL
 );
 userRoutes.post("/users/login", validateForms(userLoginSchema), userLoginCTRL);
