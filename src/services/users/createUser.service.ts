@@ -11,7 +11,7 @@ const createUserSVC = async (data: IUserRegister) => {
   });
 
   if (existingUser) {
-    throw new AppError("E-mail já cadastrado", 400);
+    throw new AppError("E-mail already registered", 400);
   }
 
   const user = new User();
@@ -21,7 +21,7 @@ const createUserSVC = async (data: IUserRegister) => {
   user.isAdm = isAdm;
 
   if (isAdm) {
-    throw new AppError("You can not create an account.", 401);
+    throw new AppError("You can not create an administrator account.", 401);
   }
 
   userRepository.create(user);
