@@ -1,109 +1,70 @@
-# Anthorflix
-O teste de dev da Anthor
+# Getting Started with Create React App
 
-# Sobre
-Obrigado pelo seu interesse em participar do nosso processo seletivo. No seu email você deve ter recebido qual trilha deve executar para seu teste: o de backend ou mobile (não é necessário fazer os dois, apenas o da sua trilha).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-O Anthorflix(:tm:) é uma aplicação revolucionária para compartilhar com seus amigos os filmes que você viu e suas avaliações. Você pode cadastrar os filmes que assistiu, avaliá-los e comentar as avaliações de seus amigos. Abaixo estão as instruções para cada trilha:
+## Available Scripts
 
-## Teste Mobile (Flutter)
-Você deve construir uma aplicação móvel utilizando Flutter para compartilhar suas opiniões sobre filmes. Seu aplicativo deve ter as seguintes funcionalidades:
+In the project directory, you can run:
 
-**Requisitos:**
+### `yarn start`
 
-- Criar, editar e remover filmes (o famoso CRUD)
-- Listar os detalhes de um filme: diretor, elenco, ano, gênero, etc
-- Avaliar filmes: fique a vontade para escolher o sistema de avaliação que quiser (estrelas, joinha, emojis, etc)
-- Comentar na avaliação de filmes: o que seria a internet sem comentários de pessoas aleatórias?
-- Use um gerenciador de estado a sua escolha
-- Teste unitário ou widget
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**Opcionais:**
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- Seria legal se sua aplicação também fizesse o cadastro e login de usuários
-- Teste de integração
-- Integração com a API do OMDB ou TheMovieDB
-- Backend em qualquer linguagem
+### `yarn test`
 
-Você não precisa usar um backend, mas seu aplicativo deve se comportar como se existisse um. Se optar por não usar um backend, seu aplicativo deve persistir os dados locais.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**Você será avaliado por:**
-- Qualidade das features entregues. Se não conseguir fazer tudo, dê preferência por entregar poucas funcionalidades, desde que sejam entregues com qualidade
-- Estrutura do seu projeto
-- Qualidade do código e padrões utilizados (Solid, Dry, etc)
-- Testes escritos
+### `yarn build`
 
----
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Teste Frontend/Fullstack (NodeJs, React)
-Você deve construir uma aplicação web utilizando React para compartilhar suas opiniões sobre filmes. Seu aplicativo deve ter as seguintes funcionalidades:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-**Requisitos:**
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Criar, editar e remover filmes (o famoso CRUD)
-- Listar os detalhes de um filme: diretor, elenco, ano, gênero, etc
-- Avaliar filmes: fique a vontade para escolher o sistema de avaliação que quiser (estrelas, joinha, emojis, etc)
-- Comentar na avaliação de filmes: o que seria a internet sem comentários de pessoas aleatórias?
-- Teste unitário
+### `yarn eject`
 
-**Opcionais:**
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-- Seria legal se sua aplicação também fizesse o cadastro e login de usuários
-- Teste de integração
-- Integração com a API do OMDB ou TheMovieDB
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-**Backend:**
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Se você se candidatou para uma vaga de frontend **não precisa usar um backend**, mas seu aplicativo **deve** se comportar como se existisse um. Se optar por não usar um backend, seu aplicativo deve persistir os dados locais.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Para candidatos fullstack, **você deve fazer um backend** que atenda as necessidades do frontend. De forma opcional, você pode seguir a especificação para o teste de backend.
+## Learn More
 
-**Você será avaliado por:**
-- Qualidade das features entregues. Se não conseguir fazer tudo, dê preferência por entregar poucas funcionalidades, desde que sejam entregues com qualidade
-- Estrutura do seu projeto
-- Qualidade do código e padrões utilizados (Solid, Dry, etc)
-- Testes escritos
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
----
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Teste Backend (NodeJS)
+### Code Splitting
 
-Você deve construir uma API Restful (preferencialmente usando NodeJS) para avaliação de filmes.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-**Requisitos:**
+### Analyzing the Bundle Size
 
-Sua API deve estar dividida nos domínios significativos para o funcionamento do sistema e deve ter as seguintes funcionalidades:
-- CRUD de filmes
-- Cadastro de usuários
-- Usuários podem marcar filmes que já assistiram
-- Usuários podem avaliar filmes
-    - Fique a vontade para escolher o sistema de avaliação que quiser (estrelas, joinha, emojis, etc)
-    - A avaliação de um filme é calculada pela média de avaliações dos usuários. O cálculo da avaliação de um filme deve ser feito de forma assíncrona
-- Usuários podem comentar nas avaliações de outros usuários
-- Sua API deve se comunicar com algum banco de dados (MongoDB, Postgres, Cassandra, etc)
-- Testes unitários (mire em 70% de cobertura)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-**Opcionais:**
-- Use docker-compose
-- Teste de integração
-- Integração com a API do OMDB ou TheMovieDB
-- Typescript
-- GraphQL
-- Autenticação de usuários
+### Making a Progressive Web App
 
-**Você será avaliado por:**
-1. Qualidade das features entregues. Se não conseguir fazer tudo, dê preferência por entregar poucas funcionalidades, desde que sejam entregues com qualidade
-1. Facilidade para rodar o código. Dê preferência para soluções como o `docker-compose` ou outras abstrações que coloquem tudo no ar com apenas um comando
-1. Testes escritos
-1. Modelagem dos domínios e estrutura do seu projeto
-1. Qualidade do código e padrões utilizados (Solid, Dry, etc)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-# Entrega
+### Advanced Configuration
 
-Você deve enviar o link do seu projeto em um repositório público por email e responder as seguintes informações no README do projeto:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-1. Como rodar o seu projeto
-1. Bugs conhecidos
-1. Como você planejou abordar este projeto? Que tecnologias foram utilizadas?
-1. Você acha algum dos requisitos ou funcionalidades difíceis em algum aspecto? Por quê?
-1. Se você tivesse mais tempo para fazer o projeto o que faria de diferente?
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
