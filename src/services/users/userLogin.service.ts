@@ -13,12 +13,16 @@ const userLoginSVC = async (email: string, password: string) => {
   if (!bcrypt.compareSync(password, user.password)) {
     throw new AppError("Wrong email or password", 404);
   }
-
+  
+  {...password, treatedUser} = user;
+  
   const token = jwt.sign({ email: email }, String(process.env.DECODER), {
     expiresIn: "1d",
   });
 
-  return token;
+  return {
+    treatedUser, token
+  };
 };
 
 export default userLoginSVC;
