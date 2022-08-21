@@ -18,7 +18,15 @@ const userLoginSVC = async (email: string, password: string) => {
     expiresIn: "1d",
   });
 
-  return token;
+  return {
+    user: {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      isAdm: user.isAdm,
+    },
+    token,
+  };
 };
 
 export default userLoginSVC;
